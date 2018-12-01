@@ -1,0 +1,13 @@
+ 
+ <div class="container" *ngIf="comic">
+    <div class="row">
+        <div class="col-12">
+            <img class="img-thumbnail thumbnail   mx-auto d-block" [src]="comic.thumbnail | thumbnailToImageSrc"  *ngIf="comic.thumbnail">
+            <h2 class="text-center mb-2">{{comic.title }}</h2>
+            <p><span>issue numer: {{comic.issueNumber}}</span></p>
+            <p>
+                {{ comic.description }}
+            </p>
+        </div>
+    </div> 
+</div>   

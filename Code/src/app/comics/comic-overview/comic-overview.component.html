@@ -1,0 +1,10 @@
+<h1>Comics</h1>
+<div class="row">
+    <div class="col-12">
+        <ac-comic-filter [title]="title" (title)="onFilter($event)"></ac-comic-filter>
+        <div>filtered title {{title}}</div>
+      </div>
+  <div class="col-12">
+    <ac-comic-list (onComicSelected)="openComicDetail($event)" [comics]="comicsFiltered"></ac-comic-list>
+  </div>
+</div>

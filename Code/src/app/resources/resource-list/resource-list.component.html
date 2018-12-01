@@ -1,0 +1,13 @@
+<div>
+    <h4>{{title | titlecase}}</h4>
+  </div>
+  <div *ngIf="!listComponentType">
+    <div  *ngFor="let resource of resourceContainer.items">
+      <div>{{resource.name}}</div>
+    </div>
+  </div>
+ 
+  <div *ngIf="listComponentType"> 
+    <div  acViewHost></div>
+  </div>
+  

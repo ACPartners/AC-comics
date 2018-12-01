@@ -1,0 +1,14 @@
+<div class="row"> 
+  <acp-pager (onPageChanged)="changePage($event)" 
+  [total]="paging.total" [offset]="paging.offset" [pageSize]="paging.limit" 
+    *ngIf="paging" class="mx-auto"  >
+  </acp-pager>
+</div>
+
+<acp-character-list [items]="characters" (onCharacterCardClick)="onCardClick($event)"></acp-character-list>
+<div class="row">
+    <acp-pager (onPageChanged)="changePage($event)" 
+  [total]="paging.total" [offset]="paging.offset" [pageSize]="paging.limit" 
+    *ngIf="paging" class="mx-auto"  >
+  </acp-pager>
+</div>

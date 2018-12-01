@@ -1,0 +1,11 @@
+<table class="table table-dark table-striped table-hover">
+    <tr>
+      <th>Thumbnail</th>
+      <th>Title</th> 
+    </tr>
+    <tr *ngFor="let comic of comics" (click)="onComicClick(comic)">
+      <td><img class="image m-1" src="{{comic.thumbnail | thumbnailToImageSrc}}" alt=""></td>
+      <td>{{comic.title}}</td>
+    
+    </tr>
+  </table>
