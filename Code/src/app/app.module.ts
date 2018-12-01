@@ -10,20 +10,18 @@ import { ComicHelper } from '../Helpers/comics';
 import { ComicOverviewComponent } from './comics/comic-overview/comic-overview.component';
 import { CoreModule } from './core/core.module';
 import { CharacterOverviewComponent } from './characters/character-overview/character-overview.component';
+import { ComicsModule } from './comics/comics.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ComicDetailComponent,
-    ThumbnailToImageSrcPipe,
-    ComicListComponent,
-    ComicOverviewComponent,
+    AppComponent,      
     CharacterOverviewComponent, 
   ],
   imports: [
-    CoreModule,
-    BrowserModule,
-    AppRoutingModule
+    CoreModule, 
+    ComicsModule,
+    SharedModule
   ],
   providers: [ComicHelper],
   bootstrap: [AppComponent]
