@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  Input } from '@angular/core';
 import { ComicHelper } from '../../../Helpers/comics';
 import { Comic } from '../../../Helpers/models';
 
@@ -9,12 +9,13 @@ import { Comic } from '../../../Helpers/models';
 })
 export class ComicDetailComponent implements OnInit {
 
+  @Input("comic")
   public comic:Comic;
-  constructor(private service:ComicHelper) { }
+
+  constructor() { }
 
   ngOnInit() {
-    console.log("getting comics");
-    this.comic = this.service.getComic(0);
+  
   }
 
 }
