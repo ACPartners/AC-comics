@@ -1,17 +1,18 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Thumbnail } from '../../../Helpers/models';
 
 @Pipe({
   name: 'thumbnailToImageSrc'
 })
 export class ThumbnailToImageSrcPipe implements PipeTransform {
 
-  transform(value: Thumbnail, args?: any): any {
-    if(!value)
-      return;
+  transform(value: any, args?: any): any {
+    // if(args)
+    //   alert(args + world)
 
-      return value.path + "." + value.extension;
-    
+      if(value && value.path)
+        return value.path + "." + value.extension
+        
+      return "";   
   }
 
 }

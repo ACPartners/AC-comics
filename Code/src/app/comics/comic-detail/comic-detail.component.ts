@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ComicHelper } from '../../../Helpers/comics';
 import { Comic } from '../../../Helpers/models';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ComicService } from '../comic.service';
 
 @Component({
   selector: 'ac-comic-detail',
@@ -12,11 +13,12 @@ export class ComicDetailComponent implements OnInit {
   @Input("comic")
   public comic:Comic;
   
-  constructor(private router:ActivatedRoute,private service:ComicHelper) { }
+  constructor(private router:ActivatedRoute,private service:ComicService) { }
 
   ngOnInit() {
-    let id = this.router.snapshot.params["id"];
-    this.comic = this.service.getComic(id%this.service.getComics().length)
+    let id = this.router.snapshot.params["id"]; 
+    this.service.getComicById(id)
+                .subscribe(c=>this.comic=c,e=>{alert(e.error.status);});
   }
 
 }

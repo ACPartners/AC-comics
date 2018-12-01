@@ -1,0 +1,31 @@
+<div class="container" *ngIf="character">
+  <div class="row">
+      <div class="col-12">
+          <img class="img-thumbnail thumbnail   mx-auto d-block" [src]="character.thumbnail | thumbnailToImageSrc"
+              *ngIf="character.thumbnail">
+          <h2 class="text-center mb-2">{{character.name}}</h2>
+          <p>
+              {{ character.description }}
+          </p>
+      </div>
+  </div>
+  <div class="row">
+      <!-- <div class="col-12">
+          <div id="series">
+              <ac-resource-list [title]="'series'" [resource]="character.series" [listComponent]="serieListComponent"></ac-resources-list>
+          </div>
+      </div> -->
+      
+      <div class="col-12">
+          <div id="events" >
+              <ac-resource-list [title]="'events'" [resource]="character.events" [listComponent]="eventsListComponent"></ac-resource-list>
+          </div>
+      </div>
+
+      <!-- <div class="col-12">
+              <div id="stories">
+                  <ac-resource-list [title]="'stories'" [resource]="character.stories" [listComponent]="storiesListComponent"></ac-resources-list>
+              </div>
+          </div> -->
+  </div>
+</div>

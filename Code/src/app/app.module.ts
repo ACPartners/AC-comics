@@ -1,26 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ComicDetailComponent } from './comics/comic-detail/comic-detail.component';
-import { ThumbnailToImageSrcPipe } from './shared/pipes/thumbnail-to-image-src.pipe';
-import { ComicListComponent } from './comics/comic-list/comic-list.component'; 
-import { ComicHelper } from '../Helpers/comics';
-import { ComicOverviewComponent } from './comics/comic-overview/comic-overview.component';
-import { CoreModule } from './core/core.module';
-import { CharacterOverviewComponent } from './characters/character-overview/character-overview.component';
+ 
+import { NgModule } from '@angular/core'; 
+import { AppComponent } from './app.component'; 
+import { ComicHelper } from '../Helpers/comics'; 
+import { CoreModule } from './core/core.module'; 
 import { ComicsModule } from './comics/comics.module';
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from './shared/shared.module';  
+import { ResourcesModule } from './resources/resources.module';
+import { CharactersModule } from './characters/characters.module';
+import { EventsModule } from './events/events.module';
 
 @NgModule({
   declarations: [
-    AppComponent,      
-    CharacterOverviewComponent, 
+    AppComponent,     
   ],
   imports: [
     CoreModule, 
     ComicsModule,
+    ResourcesModule,
+    CharactersModule,
+    EventsModule,
     SharedModule
   ],
   providers: [ComicHelper],

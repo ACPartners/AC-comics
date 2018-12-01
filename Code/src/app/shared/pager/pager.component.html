@@ -1,0 +1,22 @@
+   <div class="text-center"> 
+      <ul *ngIf="pages && pages.length" class="pagination">
+          <li [ngClass]="{disabled:currentPage === 1}"  class="page-item"> 
+              <a class="page-link" (click)="setPage(1)">First</a>
+          </li>
+          <li [ngClass]="{disabled:currentPage === 1}"  class="page-item">
+              <a class="page-link" (click)="setPage(currentPage - 1)">Previous</a>
+          </li>
+          <li *ngFor="let page of pages" [ngClass]="{active:currentPage === page}"  class="page-item">
+              <a class="page-link" (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li [ngClass]="{disabled:currentPage === totalPages}"  class="page-item">
+              <a class="page-link" (click)="setPage(currentPage + 1)">Next</a>
+          </li>
+          <li [ngClass]="{disabled:currentPage === totalPages}"  class="page-item">
+              <a class="page-link" (click)="setPage(totalPages)">Last</a>
+          </li>
+      </ul>
+  </div> 
+
+
+   

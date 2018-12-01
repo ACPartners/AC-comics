@@ -1,0 +1,38 @@
+     <div class="card-group" *ngIf="characters">
+        
+            <div *ngFor="let character of characters;trackBy:trackByCharacter" class="col-2">
+                <acp-flip-card >
+                  <div card-front>
+                    <div class="card text-white bg-dark mb-1">
+                      <h6 class="card-header">{{character.name}}</h6>
+                     
+                          <img class="img-thumbnail rounded mx-auto d-block" [src]="character.thumbnail |  thumbnailToImageSrc" *ngIf="character.thumbnail"> 
+                      
+                      <div class="card-footer">
+                        <small class="text-muted">Last modified {{character.modified | date}}</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div card-back>
+                      <div class="card text-white bg-secondary">
+                          <h6 class="card-header">{{character.name}}</h6>
+                          <div class="card-body" >
+                              <div class="">
+                                  <p>Comics: {{character.comics.available}}<a [routerLink]="['/comics/detail']"  [queryParams]="{character: character.id}"> Details</a> </p> 
+                                </div> 
+                              </div>
+                          <div class="card-footer">
+                            <div class="float-right mb-2">
+                              <button class="btn btn-primary" (click)="onCardClick(character)">Details</button>
+                            </div>
+                            <small class="text-muted">Last modified {{character.modified | date}}</small>
+                          </div>
+                        </div>
+                  </div>
+                </acp-flip-card>
+            
+              </div>
+        
+      
+      </div>
+ 
