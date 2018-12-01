@@ -4,6 +4,8 @@ import { ComicDetailComponent } from './comics/comic-detail/comic-detail.compone
 import { ComicOverviewComponent } from './comics/comic-overview/comic-overview.component'; 
 import { CharactersOverviewComponent } from './characters/characters-overview/characters-overview.component';
 import { CharactersDetailComponent } from './characters/characters-detail/characters-detail.component';
+import * as slow  from './performance/slow/character-cost-overview/character-cost-overview.component';
+import * as fast from './performance/fast/character-cost-overview/character-cost-overview.component';
 
 const routes: Routes = [
   {  path: "", redirectTo: "comics", pathMatch: "full"  },
@@ -16,6 +18,8 @@ const routes: Routes = [
     { path: "overview", component: ComicOverviewComponent },
     { path: "", component: ComicOverviewComponent },
   ]},
+  {path: "slow",  component:slow.CharacterCostOverviewComponent},
+  {path: "fast",  component:fast.CharacterCostOverviewComponent},
   { path: "**", redirectTo: "comics" }
 ];
 

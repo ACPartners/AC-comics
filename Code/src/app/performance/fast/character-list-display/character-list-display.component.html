@@ -1,0 +1,12 @@
+<div *ngIf="!characters || characters.length === 0" class="empty-list-label">Empty list</div>
+<table class="table table-striped table-dark">
+  <tr>
+    <th>Name</th>
+    <th>Costs damage</th> 
+  </tr>
+  <tr  *ngFor="let item of characters">
+    <td> {{ item.name }}</td>
+    <!-- <td> {{ calculate(item.damageModifier) }}</td>  -->
+    <td> {{item.damageModifier | fibo:title }}</td> 
+  </tr>
+</table>

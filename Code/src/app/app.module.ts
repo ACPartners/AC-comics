@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { ResourcesModule } from './resources/resources.module';
 import { CharactersModule } from './characters/characters.module';
 import { EventsModule } from './events/events.module';
+import { PerformanceModule } from './performance/performance.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EventsModule } from './events/events.module';
     ResourcesModule,
     CharactersModule,
     EventsModule,
-    SharedModule
+    SharedModule,
+    PerformanceModule
   ],
   providers: [ComicHelper],
   bootstrap: [AppComponent]
