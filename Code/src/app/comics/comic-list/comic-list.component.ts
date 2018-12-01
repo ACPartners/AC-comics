@@ -1,6 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Comic } from '../../../Helpers/models';
-import { ComicHelper } from '../../../Helpers/comics'; 
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Comic } from '../../../Helpers/models'; 
+import { ComicService } from '../comic.service';
 
 @Component({
   selector: 'ac-comic-list',
@@ -8,14 +8,14 @@ import { ComicHelper } from '../../../Helpers/comics';
   styleUrls: ['./comic-list.component.scss']
 })
 export class ComicListComponent implements OnInit {
-
+  @Input("comics")
   public comics:Comic[];
   @Output("onComicSelected")
   public onComicClickEvent:EventEmitter<Comic> = new EventEmitter();
-  constructor(private helper:ComicHelper) { }
+  constructor( ) { }
 
   ngOnInit() {
-    this.comics = this.helper.getComics();
+   
   }
   public onComicClick(selected:Comic){
     this.onComicClickEvent.emit(selected);

@@ -5,14 +5,17 @@ import { ComicListComponent } from './comic-list/comic-list.component';
 import { ComicOverviewComponent } from './comic-overview/comic-overview.component';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
-
+import { ComicService } from './comic.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ComicFilterComponent } from './comic-filter/comic-filter.component';
 @NgModule({
-  declarations: [ 
-    ComicDetailComponent,
+  declarations: [ ComicDetailComponent,
     ComicListComponent,
-    ComicOverviewComponent],
+    ComicOverviewComponent,
+    ComicFilterComponent],
   imports: [
-    CommonModule,CoreModule,SharedModule
-  ]
+    CommonModule,CoreModule,SharedModule,HttpClientModule
+  ],
+  providers:[ComicService]
 })
 export class ComicsModule { }
